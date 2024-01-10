@@ -1,16 +1,26 @@
 import { useQuery } from '@apollo/client';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { CHARACTERS } from '../../graphql/characterQueries';
+import { CHARACTERS } from '../../graphql/queries/characterQueries';
 import GetCharacterDetail from '../CharacterDetail/CharacterDetail';
+import Filters from '../Filters/Filters';
 
 function GetCharacters() {
-  //Estados
   const [page, setPage] = useState(1);
+  const [id, setId] = useState(null);
+  const [click, setClick] = useState(false); // Para saber si se hizo click
   const [searchInput, setSearchInput] = useState('');
   const [prevSearchInput, setPrevSearchInput] = useState(''); // Para guardar el valor anterior
-  const [id, setId] = useState(null);
-  const [click, setClick] = useState(false); // Con este boton indico si hubo alguna busqueda activa, al presionar el boton ¨Search
+  const [filter, setFilter] = useState({
+    gender: '',
+    status: '',
+    species: '',
+  });
+  const [prevFilter, setPrevFilter] = useState({
+    gender: '',
+    status: '',
+    species: '',
+  });
 
   const query = CHARACTERS;
   const variables = click
@@ -23,6 +33,7 @@ function GetCharacters() {
   const { data, loading, error, fetchMore } = useQuery(query, {
     variables: {
       ...variables,
+      ...filter,
     },
   });
 
@@ -66,7 +77,31 @@ function GetCharacters() {
       e.preventDefault();
       setPage(1);
       setPrevSearchInput(searchInput); // Guardo el valor actual antes de realizar la búsqueda
+      setFilter({
+        gender: '',
+        status: '',
+        species: '',
+      });
+      //setSearchInput('');
+      // setSearchInput(''); // Limpio el input después de realizar la búsqueda
     }
+  };
+
+  const handleFiltersSelected = (newFilter) => {
+    setPrevSearchInput('');
+    setSearchInput('');
+    setFilter(newFilter);
+    setPrevFilter(filter);
+  };
+
+  const handleClearFilters = () => {
+    setPrevSearchInput('');
+    setSearchInput('');
+    setFilter({
+      gender: '',
+      status: '',
+      species: '',
+    });
   };
 
   const handleCharacterClick = (id) => {
@@ -94,6 +129,11 @@ function GetCharacters() {
         Search
       </button>
       {/* </form> */}
+
+      <Filters
+        onFiltersSelected={handleFiltersSelected}
+        onClearFilters={handleClearFilters}
+      />
 
       {characters &&
         characters.map((character) => (
