@@ -1,11 +1,9 @@
+import GetCharacters from './components/CharacterList/CharacterList';
 
-
-function App() {
- 
-
+export default function App() {
   return (
-  
-  )
+    <div>
+      <GetCharacters />
+    </div>
+  );
 }
-
-export default App
