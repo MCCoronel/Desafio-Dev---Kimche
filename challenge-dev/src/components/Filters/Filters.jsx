@@ -1,7 +1,43 @@
-function Filters() {
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+
+function Filters({ onFiltersSelected, onClearFilters }) {
+  const [selectedGender, setSelectedGender] = useState('');
+  const [selectedStatus, setSelectedStatus] = useState('');
+  const [selectedSpecies, setSelectedSpecies] = useState('');
+
+  const handleFilterChange = (filterType, value) => {
+    switch (filterType) {
+      case 'gender':
+        setSelectedGender(value);
+        break;
+      case 'status':
+        setSelectedStatus(value);
+        break;
+      case 'species':
+        setSelectedSpecies(value);
+        break;
+      default:
+        break;
+    }
+
+    onFiltersSelected({
+      gender: selectedGender,
+      status: selectedStatus,
+      species: selectedSpecies,
+    });
+  };
+
+  const handleClearFilters = () => {
+    setSelectedGender('');
+    setSelectedStatus('');
+    setSelectedSpecies('');
+    onClearFilters();
+  };
+
   return (
     <div>
-      <select>
+      <select onChange={(e) => handleFilterChange('gender', e.target.value)}>
         <option value='' disabled selected>
           Gender
         </option>
@@ -11,7 +47,7 @@ function Filters() {
         <option value='unknown'>unknown</option>
       </select>
 
-      <select>
+      <select onChange={(e) => handleFilterChange('status', e.target.value)}>
         <option value='' disabled selected>
           Status
         </option>
@@ -20,7 +56,7 @@ function Filters() {
         <option value='unknown'>Unknown</option>
       </select>
 
-      <select>
+      <select onChange={(e) => handleFilterChange('species', e.target.value)}>
         <option value='' disabled selected>
           Species
         </option>
@@ -35,10 +71,15 @@ function Filters() {
         <option value='Poopybutthole'>Poopybutthole</option>
       </select>
 
-      <button>Apply Filters</button>
-      <button>Clear Filters</button>
+      <button onClick={handleFilterChange}>Apply Filters</button>
+      <button onClick={handleClearFilters}>Clear Filters</button>
     </div>
   );
 }
+
+Filters.propTypes = {
+  onFiltersSelected: PropTypes.func.isRequired,
+  onClearFilters: PropTypes.func.isRequired,
+};
 
 export default Filters;
