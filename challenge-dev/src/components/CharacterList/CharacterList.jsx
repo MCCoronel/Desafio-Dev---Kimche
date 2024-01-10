@@ -22,7 +22,7 @@ function GetCharacters() {
 
   const { data, loading, error, fetchMore } = useQuery(query, {
     variables: {
-      variables,
+      ...variables,
     },
   });
 
@@ -105,7 +105,7 @@ function GetCharacters() {
             <p>{character.name}</p>
           </div>
         ))}
-        
+
 
       {data?.characters.info.prev && (
         <button onClick={handlePreviousPage}>Previous Page</button>
