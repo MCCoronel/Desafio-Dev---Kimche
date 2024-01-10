@@ -18,13 +18,13 @@ function GetCharacterDetail({ characterId, onClose }) {
       <div className='bg-white p-4 rounded-md'>
         <h1>{character.name}</h1>
         <img src={character.image} alt={character.name} />
-        <p>{character.status}</p>
-        <p>{character.gender}</p>
-        <p>{character.species}</p>
-        <p>{character.type}</p>
-        <p>{character.location.name}</p>
-        <p>{character.origin.name}</p>
-        <p>{character.origin.dimension}</p>
+        <p>Name: {character.status}</p>
+        <p>Gender: {character.gender}</p>
+        <p>Specie: {character.species}</p>
+        <p>Type: {character.type}</p>
+        <p>Location: {character.location.name}</p>
+        <p>Origin: {character.origin.name}</p>
+        <p>Dimension: {character.origin.dimension}</p>
         <button
           className='absolute top-2 right-2 text-gray-500'
           onClick={onClose}
