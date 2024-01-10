@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-const ALL_CHARACTERS = gql`
+const CHARACTERS = gql`
 query characters(
   $name: String
   $status: String
@@ -71,4 +71,4 @@ const GET_CHARACTER_BY_NAME = gql`
 `;
 
 
-export { ALL_CHARACTERS, GET_CHARACTER, GET_CHARACTER_BY_NAME };
+export { CHARACTERS, GET_CHARACTER, GET_CHARACTER_BY_NAME };
