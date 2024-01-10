@@ -106,7 +106,6 @@ function GetCharacters() {
           </div>
         ))}
 
-
       {data?.characters.info.prev && (
         <button onClick={handlePreviousPage}>Previous Page</button>
       )}
