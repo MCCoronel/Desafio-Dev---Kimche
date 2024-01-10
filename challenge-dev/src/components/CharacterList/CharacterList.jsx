@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { CHARACTERS } from '../../graphql/queries/characterQueries';
+import { CHARACTERS } from '../../graphql/characterQueries';
 import GetCharacterDetail from '../CharacterDetail/CharacterDetail';
 import Filters from '../Filters/Filters';
 
