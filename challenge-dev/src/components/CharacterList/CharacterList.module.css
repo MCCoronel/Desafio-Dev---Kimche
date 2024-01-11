@@ -56,8 +56,8 @@
 }
 
 .buttonPage {
-  background-color: #00ffcc; /* Verde fluor */
-  color: #000; /* Texto negro */
+  background-color: #00ffcc; 
+  color: #000; 
   padding: 10px 20px;
   margin: 0 10px;
   border: none;
@@ -72,7 +72,7 @@
 
 .pages {
   font-size: 18px;
-  color: #00ffcc; /* Verde fluor */
+  color: #00ffcc;
   margin: 0 10px;
 }
 
@@ -86,25 +86,25 @@
 
 .searchInput {
   width: 92%;
-  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+  box-sizing: border-box; 
   padding: 10px;
-  border: 2px solid #00ffcc; /* Bordes verdes */
+  border: 2px solid #00ffcc; 
   border-radius: 5px;
   margin-right: 10px;
   font-size: 16px;
-  color: #fff; /* Texto blanco */
-  background-color: #1a1a1a; /* Fondo negro */
+  color: #fff; 
+  background-color: #1a1a1a; 
 }
 
 .searchButton {
   padding: 10px 20px;
-  background-color: #00ffcc; /* Fondo verde fluor */
+  background-color: #00ffcc; 
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  color: #000; /* Texto negro */
+  color: #000; 
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Efecto de transición */
+  transition: background-color 0.3s ease; 
 }
 
 .searchButton:hover {
@@ -113,7 +113,7 @@
 
 @media only screen and (max-width: 768px) {
   .CardsContainer {
-    grid-template-columns: 2fr; /* Cambia a una sola columna en pantallas pequeñas */
-    justify-content: center; /* Centra los elementos */
+    grid-template-columns: 2fr; 
+    justify-content: center; 
   }
 }

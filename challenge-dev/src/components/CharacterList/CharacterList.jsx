@@ -123,6 +123,7 @@ function GetCharacters() {
         <input
           type='text'
           value={searchInput}
+          placeholder='Search'
           onChange={(e) => setSearchInput(e.target.value)}
           className={style.searchInput}
         />
