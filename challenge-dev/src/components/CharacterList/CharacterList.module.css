@@ -1,0 +1,47 @@
+.CardsContainer{
+    max-width: 75%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.CharacterCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 350px; /* Ajusta según sea necesario para el ancho deseado */
+  }
+  
+  .CharacterImage {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 350px; /* Ajusta según sea necesario para la altura deseada */
+  }
+  
+  .CharacterImage img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+  }
+  
+  .CharacterName {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+
+  .pagination{
+    
+  }
