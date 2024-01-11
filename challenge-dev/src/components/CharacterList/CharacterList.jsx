@@ -83,6 +83,7 @@ function GetCharacters() {
     setPrevSearchInput('');
     setSearchInput('');
     setFilter(filters);
+    setPage(1);
   };
 
   const handleClearFilters = () => {
