@@ -12,14 +12,14 @@
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    width: 350px; /* Ajusta según sea necesario para el ancho deseado */
+    width: 350px; 
   }
   
   .CharacterImage {
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    height: 350px; /* Ajusta según sea necesario para la altura deseada */
+    height: 350px; 
   }
   
   .CharacterImage img {
@@ -60,7 +60,7 @@
   }
   
   .buttonPage:hover {
-    background-color: #33ffcc; /* Cambio de color al pasar el mouse */
+    background-color: #33ffcc; 
   }
   
   .pages {
@@ -97,5 +97,5 @@
 }
 
 .searchButton:hover {
-  background-color: #009966; /* Cambia el color al pasar el ratón */
+  background-color: #009966; 
 }
