@@ -156,11 +156,11 @@ function GetCharacters() {
 
       <div className={style.pagination}>
         {data?.characters.info.prev && (
-          <button onClick={handlePreviousPage}>Previous Page</button>
+          <button onClick={handlePreviousPage} className={style.buttonPage}	>Previous Page</button>
         )}
-
+          <div className={style.pages}>Page {page} / {data?.characters.info.pages}</div>
         {data?.characters.info.next && (
-          <button onClick={handleNextPage}>Next Page</button>
+          <button onClick={handleNextPage} className={style.buttonPage}>Next Page</button>
         )}
       </div>
 

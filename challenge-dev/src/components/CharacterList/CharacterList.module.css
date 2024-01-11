@@ -41,7 +41,30 @@
     font-weight: bold;
   }
   
-
-  .pagination{
-    
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .buttonPage {
+    background-color: #00ffcc; /* Verde fluor */
+    color: #000; /* Texto negro */
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttonPage:hover {
+    background-color: #33ffcc; /* Cambio de color al pasar el mouse */
+  }
+  
+  .pages {
+    font-size: 18px;
+    color: #00ffcc; /* Verde fluor */
+    margin: 0 10px;
   }
