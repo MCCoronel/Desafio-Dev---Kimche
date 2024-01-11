@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { CHARACTERS } from '../../graphql/characterQueries';
 import GetCharacterDetail from '../CharacterDetail/CharacterDetail';
 import Filters from '../Filters/Filters';
+import style from './CharacterList.module.css';
 
 function GetCharacters() {
   const [page, setPage] = useState(1);
@@ -16,11 +17,11 @@ function GetCharacters() {
     status: '',
     species: '',
   });
-  const [prevFilter, setPrevFilter] = useState({
-    gender: '',
-    status: '',
-    species: '',
-  });
+  // const [prevFilter, setPrevFilter] = useState({
+  //   gender: '',
+  //   status: '',
+  //   species: '',
+  // });
 
   const query = CHARACTERS;
   const variables = click
@@ -87,11 +88,10 @@ function GetCharacters() {
     }
   };
 
-  const handleFiltersSelected = (newFilter) => {
+  const handleFiltersSelected = (filters) => {
     setPrevSearchInput('');
     setSearchInput('');
-    setFilter(newFilter);
-    setPrevFilter(filter);
+    setFilter(filters);
   };
 
   const handleClearFilters = () => {
@@ -131,28 +131,38 @@ function GetCharacters() {
       {/* </form> */}
 
       <Filters
+        currentFilters={filter}
         onFiltersSelected={handleFiltersSelected}
         onClearFilters={handleClearFilters}
       />
 
-      {characters &&
-        characters.map((character) => (
-          <div
-            key={character.id}
-            onClick={() => handleCharacterClick(character.id)}
-          >
-            <img src={character.image} alt={character.name} />
-            <p>{character.name}</p>
-          </div>
-        ))}
+      <div className={style.CardsContainer}>
+        {characters &&
+          characters.map((character) => (
+            <div
+              key={character.id}
+              onClick={() => handleCharacterClick(character.id)}
+              className={style.CharacterCard}
+            >
+              <div className={style.CharacterImage}>
+                <img src={character.image} alt={character.name} />
+              </div>
+              <div className={style.CharacterName}>
+                <p>{character.name}</p>
+              </div>
+            </div>
+          ))}
+      </div>
 
-      {data?.characters.info.prev && (
-        <button onClick={handlePreviousPage}>Previous Page</button>
-      )}
+      <div className={style.pagination}>
+        {data?.characters.info.prev && (
+          <button onClick={handlePreviousPage}>Previous Page</button>
+        )}
 
-      {data?.characters.info.next && (
-        <button onClick={handleNextPage}>Next Page</button>
-      )}
+        {data?.characters.info.next && (
+          <button onClick={handleNextPage}>Next Page</button>
+        )}
+      </div>
 
       {id && (
         <GetCharacterDetail

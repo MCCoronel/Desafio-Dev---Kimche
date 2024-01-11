@@ -1,43 +1,13 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function Filters({ onFiltersSelected, onClearFilters }) {
-  const [selectedGender, setSelectedGender] = useState('');
-  const [selectedStatus, setSelectedStatus] = useState('');
-  const [selectedSpecies, setSelectedSpecies] = useState('');
-
-  const handleFilterChange = (filterType, value) => {
-    switch (filterType) {
-      case 'gender':
-        setSelectedGender(value);
-        break;
-      case 'status':
-        setSelectedStatus(value);
-        break;
-      case 'species':
-        setSelectedSpecies(value);
-        break;
-      default:
-        break;
-    }
-
-    onFiltersSelected({
-      gender: selectedGender,
-      status: selectedStatus,
-      species: selectedSpecies,
-    });
-  };
-
-  const handleClearFilters = () => {
-    setSelectedGender('');
-    setSelectedStatus('');
-    setSelectedSpecies('');
-    onClearFilters();
+function Filters({ currentFilters, onFiltersSelected, onClearFilters }) {
+  const handleSelectFilters = (e) => {
+    currentFilters[e.target.name] = e.target.value;
   };
 
   return (
     <div>
-      <select onChange={(e) => handleFilterChange('gender', e.target.value)}>
+      <select name='gender' onChange={(e) => handleSelectFilters(e)}>
         <option value='' disabled selected>
           Gender
         </option>
@@ -47,7 +17,7 @@ function Filters({ onFiltersSelected, onClearFilters }) {
         <option value='unknown'>unknown</option>
       </select>
 
-      <select onChange={(e) => handleFilterChange('status', e.target.value)}>
+      <select name='status' onChange={(e) => handleSelectFilters(e)}>
         <option value='' disabled selected>
           Status
         </option>
@@ -56,7 +26,7 @@ function Filters({ onFiltersSelected, onClearFilters }) {
         <option value='unknown'>Unknown</option>
       </select>
 
-      <select onChange={(e) => handleFilterChange('species', e.target.value)}>
+      <select name='species' onChange={(e) => handleSelectFilters(e)}>
         <option value='' disabled selected>
           Species
         </option>
@@ -71,8 +41,14 @@ function Filters({ onFiltersSelected, onClearFilters }) {
         <option value='Poopybutthole'>Poopybutthole</option>
       </select>
 
-      <button onClick={handleFilterChange}>Apply Filters</button>
-      <button onClick={handleClearFilters}>Clear Filters</button>
+      <button
+        onClick={() => {
+          onFiltersSelected(currentFilters);
+        }}
+      >
+        Apply Filters
+      </button>
+      <button onClick={onClearFilters}>Clear Filters</button>
     </div>
   );
 }
@@ -80,6 +56,7 @@ function Filters({ onFiltersSelected, onClearFilters }) {
 Filters.propTypes = {
   onFiltersSelected: PropTypes.func.isRequired,
   onClearFilters: PropTypes.func.isRequired,
+  currentFilters: PropTypes.object.isRequired,
 };
 
 export default Filters;
