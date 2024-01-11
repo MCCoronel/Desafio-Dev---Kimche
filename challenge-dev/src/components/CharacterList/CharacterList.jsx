@@ -16,11 +16,7 @@ function GetCharacters() {
     status: '',
     species: '',
   });
-  // const [prevFilter, setPrevFilter] = useState({
-  //   gender: '',
-  //   status: '',
-  //   species: '',
-  // });
+ 
 
   const query = CHARACTERS;
   const variables = click
@@ -79,8 +75,7 @@ function GetCharacters() {
         status: '',
         species: '',
       });
-      //setSearchInput('');
-      // setSearchInput(''); // Limpio el input después de realizar la búsqueda
+    
     }
   };
 
@@ -115,7 +110,6 @@ function GetCharacters() {
 
   return (
     <div>
-      {/* <form onSubmit={handleSearch}> */}
       <div className={style.searchBar}>
         <input
           type='text'
@@ -132,7 +126,6 @@ function GetCharacters() {
           Search
         </button>
       </div>
-      {/* </form> */}
 
       <Filters
         currentFilters={filter}
@@ -141,23 +134,23 @@ function GetCharacters() {
         className={style.Filters}
       />
 
-     <div className={style.CardsContainer}>
-      {characters &&
-        characters.map((character) => (
-          <div
-            key={character.id}
-            onClick={() => handleCharacterClick(character.id)}
-            className={style.CharacterCard}
-          >
-            <div className={style.CharacterImage}>
-              <img src={character.image} alt={character.name} />
+      <div className={style.CardsContainer}>
+        {characters &&
+          characters.map((character) => (
+            <div
+              key={character.id}
+              onClick={() => handleCharacterClick(character.id)}
+              className={style.CharacterCard}
+            >
+              <div className={style.CharacterImage}>
+                <img src={character.image} alt={character.name} />
+              </div>
+              <div className={style.CharacterName}>
+                <p>{character.name}</p>
+              </div>
             </div>
-            <div className={style.CharacterName}>
-              <p>{character.name}</p>
-            </div>
-          </div>
-        ))}
-    </div>
+          ))}
+      </div>
 
       <div className={style.pagination}>
         {data?.characters.info.prev && (
