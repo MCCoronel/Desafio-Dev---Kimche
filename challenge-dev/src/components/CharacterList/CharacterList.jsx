@@ -119,14 +119,21 @@ function GetCharacters() {
   return (
     <div>
       {/* <form onSubmit={handleSearch}> */}
-      <input
-        type='text'
-        value={searchInput}
-        onChange={(e) => setSearchInput(e.target.value)}
-      />
-      <button onClick={handleSearch} type='submit'>
-        Search
-      </button>
+      <div className={style.searchBar}>
+        <input
+          type='text'
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          className={style.searchInput}
+        />
+        <button
+          onClick={handleSearch}
+          type='submit'
+          className={style.searchButton}
+        >
+          Search
+        </button>
+      </div>
       {/* </form> */}
 
       <Filters
@@ -155,11 +162,17 @@ function GetCharacters() {
 
       <div className={style.pagination}>
         {data?.characters.info.prev && (
-          <button onClick={handlePreviousPage} className={style.buttonPage}	>Previous Page</button>
+          <button onClick={handlePreviousPage} className={style.buttonPage}>
+            Previous Page
+          </button>
         )}
-          <div className={style.pages}>Page {page} / {data?.characters.info.pages}</div>
+        <div className={style.pages}>
+          Page {page} / {data?.characters.info.pages}
+        </div>
         {data?.characters.info.next && (
-          <button onClick={handleNextPage} className={style.buttonPage}>Next Page</button>
+          <button onClick={handleNextPage} className={style.buttonPage}>
+            Next Page
+          </button>
         )}
       </div>
 
@@ -172,6 +185,5 @@ function GetCharacters() {
     </div>
   );
 }
-
 
 export default GetCharacters;

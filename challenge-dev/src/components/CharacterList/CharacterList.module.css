@@ -68,3 +68,34 @@
     color: #00ffcc; /* Verde fluor */
     margin: 0 10px;
   }
+
+/* Estilos para la searchBar */
+.searchBar {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  padding: 10px;
+  border: 2px solid #00ffcc; /* Bordes verdes */
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: #fff; /* Texto blanco */
+  background-color: #1a1a1a; /* Fondo negro */
+}
+
+.searchButton {
+  padding: 10px 20px;
+  background-color: #00ffcc; /* Fondo verde fluor */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000; /* Texto negro */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Efecto de transición */
+}
+
+.searchButton:hover {
+  background-color: #009966; /* Cambia el color al pasar el ratón */
+}
