@@ -1,8 +1,7 @@
 import { useQuery } from '@apollo/client';
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { CHARACTERS } from '../../graphql/characterQueries';
-import GetCharacterDetail from '../CharacterDetail/CharacterDetail';
+import CharacterDetail from '../CharacterDetail/CharacterDetail';
 import Filters from '../Filters/Filters';
 import style from './CharacterList.module.css';
 
@@ -165,7 +164,7 @@ function GetCharacters() {
       </div>
 
       {id && (
-        <GetCharacterDetail
+        <CharacterDetail
           characterId={id.toString()}
           onClose={handleCloseModal}
         />
@@ -174,10 +173,5 @@ function GetCharacters() {
   );
 }
 
-GetCharacters.propTypes = {
-  characterList: PropTypes.object.isRequired,
-  setCharacterList: PropTypes.func.isRequired,
-  updateCharacterList: PropTypes.func.isRequired,
-};
 
 export default GetCharacters;
