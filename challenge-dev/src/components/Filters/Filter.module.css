@@ -1,38 +1,41 @@
-/* Estilos para los filtros */
 .filtersContainer {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .selectFilter {
-    padding: 10px;
-    border: 2px solid #00ffcc; /* Bordes verdes */
-    border-radius: 5px;
-    margin-right: 10px;
-    font-size: 16px;
-    color: #fff; /* Texto blanco */
-    background-color: #1a1a1a; /* Fondo negro */
-  }
-  
-  .clearFiltersButton {
-    margin-left: 10px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
 
-  .applyFiltersButton,
-  .clearFiltersButton {
-    padding: 10px 20px;
-    background-color: #00ffcc; /* Fondo verde fluor */
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #000; /* Texto negro */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Efecto de transición */
-  }
-  
-  .applyFiltersButton:hover,
-  .clearFiltersButton:hover {
-    background-color: #009966; /* Cambia el color al pasar el ratón */
-  }
-  
+.selectFilter {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 10px; /* Aumenta el padding para hacer los filtros más largos */
+  border: 2px solid #00ffcc;
+  border-radius: 5px;
+  margin: 0px 5px 1px 5px; 
+  font-size: 16px;
+  color: #fff;
+  background-color: #1a1a1a;
+  width: calc(30% - px); /* Divide en 3 columnas, ajustando el ancho y márgenes */
+}
+
+.clearFiltersButton {
+  margin-left: 10px;
+}
+
+.applyFiltersButton,
+.clearFiltersButton {
+  padding: 10px; /* Aumenta el padding para hacer los botones más grandes */
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.applyFiltersButton:hover,
+.clearFiltersButton:hover {
+  background-color: #009966;
+}

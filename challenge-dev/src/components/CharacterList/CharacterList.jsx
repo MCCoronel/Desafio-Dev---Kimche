@@ -136,10 +136,12 @@ function GetCharacters() {
       </div>
       {/* </form> */}
 
+     
       <Filters
         currentFilters={filter}
         onFiltersSelected={handleFiltersSelected}
         onClearFilters={handleClearFilters}
+        className={style.Filters}
       />
 
       <div className={style.CardsContainer}>
