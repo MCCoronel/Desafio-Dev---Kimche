@@ -39,22 +39,14 @@
   width: 50%;
 }
 
-.characterImage img {
-  width: 100%;
-  height: auto;
-  position: unset;
-  border-radius: 0;
-}
-
 .characterData {
   flex: 1;
   margin-left: 20px;
 }
 
-
 .modal h1 {
   font-size: 24px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 .modal img {
@@ -68,22 +60,33 @@
 
 .detailItem {
   font-size: 16px;
-  color: #00ffcc;
+  color: #ffffff;
 }
 
-  .modal button {
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    background: none;
-    border: none;
-    font-size: 18px;
-    color: #fff;
-    cursor: pointer;
-  }
+.modal button {
+  border-radius: 50% ;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 30px; /* Ajusta el ancho del botón */
+  height: 30px; /* Ajusta la altura del botón */
+  background-color: whitesmoke;
+  border: none;
+  font-size: 10px;
+  color: #000000;
+  cursor: pointer;
+}
 
-  .modal button:hover {
-    background: red;
-    color: #fff;
-  }
+.modal button:hover {
+  background: red;
+  color: #fff;
+}
 
+.detailItem {
+  margin-bottom: 10px;
+}
+
+.detailLabel {
+  color: #00ffcc;
+  font-weight: bold;
+}

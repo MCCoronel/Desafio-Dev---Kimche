@@ -17,46 +17,60 @@ function CharacterDetail({ characterId, onClose }) {
 
   return (
     <div className={style.modal}>
-      <div className={style.modalContent}>
-        <div className={style.characterDetails}>
-          <div className={style.characterDetailsWrapper}>
-            <div className={style.characterImage}>
-              <img src={character?.image} alt={character?.name} />
-            </div>
-            <div className={style.characterData}>
-              <h1 className={style.characterName}>{character?.name}</h1>
-              <div className={style.characterData1}>
-                {character?.status && (
-                  <p className={style.detailItem}>Status: {character.status}</p>
-                )}
-                {character?.gender && (
-                  <p className={style.detailItem}>Gender: {character.gender}</p>
-                )}
-                {character?.species && (
-                  <p className={style.detailItem}>Species: {character.species}</p>
-                )}
-                {character?.type && (
-                  <p className={style.detailItem}>Type: {character.type}</p>
-                )}
-                {character?.location?.name && (
-                  <p className={style.detailItem}>Location: {character.location.name}</p>
-                )}
-                {character?.origin?.name && (
-                  <p className={style.detailItem}>Origin: {character.origin.name}</p>
-                )}
-                {character?.origin?.dimension && (
-                  <p className={style.detailItem}>Dimension: {character.origin.dimension}</p>
-                )}
-              </div>
+    <div className={style.modalContent}>
+      <div className={style.characterDetails}>
+        <div className={style.characterDetailsWrapper}>
+          <div className={style.characterImage}>
+            <img src={character?.image} alt={character?.name} />
+          </div>
+          <div className={style.characterData}>
+            <h1 className={style.characterName}>{character?.name}</h1>
+            <div className={style.characterData1}>
+              {character?.status && (
+                <div className={style.detailItem}>
+                  <span className={style.detailLabel}>Status:</span> {character.status}
+                </div>
+              )}
+              {character?.gender && (
+                <div className={style.detailItem}>
+                  <span className={style.detailLabel}>Gender:</span> {character.gender}
+                </div>
+              )}
+              {character?.species && (
+                <div className={style.detailItem}>
+                  <span className={style.detailLabel}>Species:</span> {character.species}
+                </div>
+              )}
+              {character?.type && (
+                <div className={style.detailItem}>
+                  <span className={style.detailLabel}>Type:</span> {character.type}
+                </div>
+              )}
+              {character?.location?.name && (
+                <div className={style.detailItem}>
+                  <span className={style.detailLabel}>Location:</span> {character.location.name}
+                </div>
+              )}
+              {character?.origin?.name && (
+                <div className={style.detailItem}>
+                  <span className={style.detailLabel}>Origin:</span> {character.origin.name}
+                </div>
+              )}
+              {character?.origin?.dimension && (
+                <div className={style.detailItem}>
+                  <span className={style.detailLabel}>Dimension:</span> {character.origin.dimension}
+                </div>
+              )}
             </div>
           </div>
-
           <button className={style.closeButton} onClick={onClose}>
             X
           </button>
         </div>
       </div>
     </div>
+  </div>
+  
   );
 }
 
@@ -66,4 +80,3 @@ CharacterDetail.propTypes = {
 };
 
 export default CharacterDetail;
-

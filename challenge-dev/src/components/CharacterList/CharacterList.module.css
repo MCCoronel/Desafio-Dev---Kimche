@@ -8,7 +8,6 @@
   grid-gap: 10px;
 }
 
-
 .CharacterCard {
   position: relative;
   overflow: hidden;
@@ -54,15 +53,26 @@
 }
 
 .pagination {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  padding: 10px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 1000;
 }
 
 .buttonPage {
-  background-color: #00ffcc; 
-  color: #000; 
+  background-color: #00ffcc;
+  color: #000;
   padding: 10px 20px;
   margin: 0 10px;
   border: none;
