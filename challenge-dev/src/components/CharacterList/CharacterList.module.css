@@ -1,18 +1,19 @@
 .CardsContainer {
-  max-width: 75%;
-  margin-bottom: 30px;
-  margin-top: 20px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
 }
+
 
 .CharacterCard {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  width: 280px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -20,7 +21,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  height: 280px;
+  height: 100%;
 }
 
 .CharacterImage img {
@@ -51,7 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .buttonPage {
@@ -110,9 +111,9 @@
   background-color: #009966;
 }
 
-.Filters {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px; /* Ajusta según sea necesario */
+@media only screen and (max-width: 768px) {
+  .CardsContainer {
+    grid-template-columns: 2fr; /* Cambia a una sola columna en pantallas pequeñas */
+    justify-content: center; /* Centra los elementos */
+  }
 }

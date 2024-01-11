@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center; /* Centra los elementos horizontalmente */
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .selectFilter {
@@ -12,11 +12,11 @@
   padding: 10px; /* Aumenta el padding para hacer los filtros más largos */
   border: 2px solid #00ffcc;
   border-radius: 5px;
-  margin: 0px 5px 1px 5px; 
+  margin: 0 5px 5px 0; /* Ajusta los márgenes para separar los filtros y alinearlos */
   font-size: 16px;
   color: #fff;
   background-color: #1a1a1a;
-  width: calc(30% - px); /* Divide en 3 columnas, ajustando el ancho y márgenes */
+  width: 200px;
 }
 
 .clearFiltersButton {
@@ -25,7 +25,8 @@
 
 .applyFiltersButton,
 .clearFiltersButton {
-  padding: 10px; /* Aumenta el padding para hacer los botones más grandes */
+  margin-top: 0;
+  padding: 10px; 
   background-color: #00ffcc;
   border: none;
   border-radius: 5px;

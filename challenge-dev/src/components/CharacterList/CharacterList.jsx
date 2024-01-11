@@ -136,7 +136,6 @@ function GetCharacters() {
       </div>
       {/* </form> */}
 
-     
       <Filters
         currentFilters={filter}
         onFiltersSelected={handleFiltersSelected}
@@ -165,7 +164,7 @@ function GetCharacters() {
       <div className={style.pagination}>
         {data?.characters.info.prev && (
           <button onClick={handlePreviousPage} className={style.buttonPage}>
-            Previous Page
+            Prev
           </button>
         )}
         <div className={style.pages}>
@@ -173,7 +172,7 @@ function GetCharacters() {
         </div>
         {data?.characters.info.next && (
           <button onClick={handleNextPage} className={style.buttonPage}>
-            Next Page
+            Next
           </button>
         )}
       </div>
