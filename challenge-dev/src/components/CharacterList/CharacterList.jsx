@@ -27,9 +27,6 @@ function GetCharacters() {
     ? { name: click ? prevSearchInput : '', page }
     : { page };
 
-  console.log(variables);
-  console.log('query', query);
-
   const { data, loading, error, fetchMore } = useQuery(query, {
     variables: {
       ...variables,
@@ -144,7 +141,7 @@ function GetCharacters() {
         className={style.Filters}
       />
 
-<div className={style.CardsContainer}>
+     <div className={style.CardsContainer}>
       {characters &&
         characters.map((character) => (
           <div
