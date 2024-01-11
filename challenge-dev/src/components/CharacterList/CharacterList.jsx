@@ -144,23 +144,23 @@ function GetCharacters() {
         className={style.Filters}
       />
 
-      <div className={style.CardsContainer}>
-        {characters &&
-          characters.map((character) => (
-            <div
-              key={character.id}
-              onClick={() => handleCharacterClick(character.id)}
-              className={style.CharacterCard}
-            >
-              <div className={style.CharacterImage}>
-                <img src={character.image} alt={character.name} />
-              </div>
-              <div className={style.CharacterName}>
-                <p>{character.name}</p>
-              </div>
+<div className={style.CardsContainer}>
+      {characters &&
+        characters.map((character) => (
+          <div
+            key={character.id}
+            onClick={() => handleCharacterClick(character.id)}
+            className={style.CharacterCard}
+          >
+            <div className={style.CharacterImage}>
+              <img src={character.image} alt={character.name} />
             </div>
-          ))}
-      </div>
+            <div className={style.CharacterName}>
+              <p>{character.name}</p>
+            </div>
+          </div>
+        ))}
+    </div>
 
       <div className={style.pagination}>
         {data?.characters.info.prev && (
