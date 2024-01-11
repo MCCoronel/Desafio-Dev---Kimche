@@ -15,6 +15,10 @@
     background-color: #1a1a1a; /* Fondo negro */
   }
   
+  .clearFiltersButton {
+    margin-left: 10px;
+  }
+
   .applyFiltersButton,
   .clearFiltersButton {
     padding: 10px 20px;
