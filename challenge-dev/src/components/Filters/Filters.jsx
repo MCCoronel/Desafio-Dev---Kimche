@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import style from './Filter.module.css';
 
 function Filters({ currentFilters, onFiltersSelected, onClearFilters }) {
   const handleSelectFilters = (e) => {
@@ -6,8 +7,12 @@ function Filters({ currentFilters, onFiltersSelected, onClearFilters }) {
   };
 
   return (
-    <div>
-      <select name='gender' onChange={(e) => handleSelectFilters(e)}>
+    <div className={style.filtersContainer}>
+      <select
+        name='gender'
+        onChange={(e) => handleSelectFilters(e)}
+        className={style.selectFilter}
+      >
         <option value='' disabled selected>
           Gender
         </option>
@@ -17,7 +22,11 @@ function Filters({ currentFilters, onFiltersSelected, onClearFilters }) {
         <option value='unknown'>unknown</option>
       </select>
 
-      <select name='status' onChange={(e) => handleSelectFilters(e)}>
+      <select
+        name='status'
+        onChange={(e) => handleSelectFilters(e)}
+        className={style.selectFilter}
+      >
         <option value='' disabled selected>
           Status
         </option>
@@ -26,7 +35,11 @@ function Filters({ currentFilters, onFiltersSelected, onClearFilters }) {
         <option value='unknown'>Unknown</option>
       </select>
 
-      <select name='species' onChange={(e) => handleSelectFilters(e)}>
+      <select
+        name='species'
+        onChange={(e) => handleSelectFilters(e)}
+        className={style.selectFilter}
+      >
         <option value='' disabled selected>
           Species
         </option>
@@ -45,10 +58,13 @@ function Filters({ currentFilters, onFiltersSelected, onClearFilters }) {
         onClick={() => {
           onFiltersSelected(currentFilters);
         }}
+        className={style.applyFiltersButton}
       >
         Apply Filters
       </button>
-      <button onClick={onClearFilters}>Clear Filters</button>
+      <button onClick={onClearFilters} className={style.clearFiltersButton}>
+        Clear Filters
+      </button>
     </div>
   );
 }
